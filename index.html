@@ -68,27 +68,42 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+
+<!-- Show the first results-->
       <div class="output">
         <h3>Your best match is displayed below:</h3>
         <div class="div-1">
+
           <img class="imgStyle" src="img/tent.jpg" alt="tent"/>
           <div><img src="img/tent-icon.png" alt="" /><span> Tent</span></div>
           <div><img src="img/river-icon.png" alt="" /><span> River</span></div>
           <div><img src="img/cost-icon.png" alt="" /><span id="theCost"> $:</span></div>
+
+        <span class="displafImage"></span><!--image of selection-->
+        <span class="displayStyle"></span><!--tent,rv,cabin-->
+        <span class="displaySetting"></span><!--river,mountain,coast-->
+        <span class="displayPrice"></span><!--price varies-->
+
         </div>
-        <div class="div-2">
-          <img class="imgStyle" src="img/rv.jpg" alt="rv"/>
-          <div><img src="img/trailer-icon.png" alt="" /><span> Trailer</span></div>
-          <div><img src="img/river-icon.png" alt="" /><span> River</span></div>
-          <div><img src="img/cost-icon.png" alt="" /><span id="cost"> $:</span></div>
+        <button type="button" name="button">Select</button>
         </div>
-        <div class="div-3">
-          <img class="imgStyle" src="img/cabin.jpg" alt="rv"/>
-          <div><img src="img/cabin-icon.png" alt="" /><span> Cabin</span></div>
-          <div><img src="img/river-icon.png" alt="" /><span> River</span></div>
-          <div><img src="img/cost-icon.png" alt="" /><span id="cost"> $:</span></div>
-        </div>
-      </div>
+
+<!-- Ask for more information-->
+      <div id="partTwo">
+      <form class="formTwo"><!--2nd form that targets dates and length of stay-->
+        <h3>What day would you like to arrive?</h3>
+        <input id="date" type="date" name="bday">
+        <h3>How many nights would you like to stay?</h3>
+        <input id="nights" type="number">
+        <h3>How many people will be staying?</h3>
+        <input id="people" type="number">
+        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+      </form><!--ends 2nd form-->
+    </div>
+
+<!-- Show the Second result (total price)-->
+      <span class="displayTotalPrice"></span><!--price coording to user form2-->
+
     </div>
   </body>
 </html>
