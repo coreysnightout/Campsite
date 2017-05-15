@@ -1,16 +1,16 @@
 //  BUSINESS LOGIC--------------------------
 
  // CAMPSITE CONSTRUCTOR
-function Campsite(style, setting, price, url, styleIcon, settingIcon, priceIcon, mainImg) {
+function Campsite(style, setting, price, styleIcon, settingIcon) {
   this.siteStyle = style;
   this.siteSetting = setting;
   this.sitePrice = price;
   this.siteState = "Oregon";
-  this.siteURL = url;
+  this.siteURL = "url";
   this.siteStyleIcon = styleIcon;
   this.siteSettingIcon = settingIcon;
-  this.sitePriceIcon = priceIcon;
-  this.siteMainImg = mainImg;
+  this.sitePriceIcon = "priceIcon";
+  this.siteMainImg = "mainImg";
 };
 
 //  USER CONSTRUCTOR
@@ -39,15 +39,15 @@ $(document).ready(function() {
     event.preventDefault();
 
     //  INITIALIZING CAMPING OBJECTS
-    var tentMountain = new Campsite("tent", "mountain", 5);
-    var tentCoast = new Campsite("tent", "coast", 5);
-    var tentRiver = new Campsite("tent", "river", 5);
-    var rvMountain = new Campsite("rv", "mountain", 5);
-    var rvCoast = new Campsite("rv", "coast", 5);
-    var rvRiver = new Campsite("rv", "river", 5);
-    var cabinMountain = new Campsite("cabin", "mountain", 5);
-    var cabinCoast = new Campsite("cabin", "coast", 5);
-    var cabinRiver = new Campsite("cabin", "river", 5);
+    var tentMountain = new Campsite("tent", "mountain", 5, "<img src='img/tent-icon.png'>");
+    var tentCoast = new Campsite("tent", "coast", 5, "<img src='img/tent-icon.png'>");
+    var tentRiver = new Campsite("tent", "river", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>");
+    var rvMountain = new Campsite("rv", "mountain", 10);
+    var rvCoast = new Campsite("rv", "coast", 10);
+    var rvRiver = new Campsite("rv", "river", 10);
+    var cabinMountain = new Campsite("cabin", "mountain", 15);
+    var cabinCoast = new Campsite("cabin", "coast", 15);
+    var cabinRiver = new Campsite("cabin", "river", 15);
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
@@ -59,12 +59,15 @@ $(document).ready(function() {
 
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
-    console.log(findCampsiteReturn.siteStyle);
-    $("#theCost").text(findCampsiteReturn.sitePrice)
-    $("#theCost").text(findCampsiteReturn.siteStyle)
-    $("#theCost").text(findCampsiteReturn.siteSetting)
-    $("#theCost").text(findCampsiteReturn.siteState)
-    $("#theCost").text(findCampsiteReturn.siteURL)
+
+      //  DISPLAYS CONTENT IN HTML
+    // $("#theCost").text(findCampsiteReturn.sitePrice)
+    $(".displayStyle").text(findCampsiteReturn.siteStyle)
+    $(".displaySetting").text(findCampsiteReturn.siteSetting)
+    $(".styleIcon").append(findCampsiteReturn.siteStyleIcon)
+    $(".settingIcon").append(findCampsiteReturn.siteSettingIcon)
+    // $("").text(findCampsiteReturn.siteState)
+    // $("").text(findCampsiteReturn.siteURL)
 
   }); // .submit
 });  // doc.ready
