@@ -1,4 +1,4 @@
-.imgTent {
+.imgStyle {
   max-width: 300px;
   max-height: auto;
 }
@@ -11,4 +11,25 @@ span {
   /*display: none;*/
   margin: 5px;
   border: 2px black solid;
+  padding: 5px;
+  border-radius: 5px;
+  width: 45%;
+}
+
+.div-2 {
+  /*display: none;*/
+  margin: 5px;
+  border: 2px black solid;
+  padding: 5px;
+  border-radius: 5px;
+  width: 45%;
+}
+
+.div-3 {
+  /*display: none;*/
+  margin: 5px;
+  border: 2px black solid;
+  padding: 5px;
+  border-radius: 5px;
+  width: 45%;
 }
