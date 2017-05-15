@@ -1,0 +1,14 @@
+.imgTent {
+  max-width: 300px;
+  max-height: auto;
+}
+
+span {
+  font-size: 22px;
+}
+
+.div-1 {
+  /*display: none;*/
+  margin: 5px;
+  border: 2px black solid;
+}
