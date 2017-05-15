@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Campsite Finder</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Campsite Finder</h1>
+      </div>
+      <form class="userInput">
+<!-- Question 1: What State -->
+        <div class="form-group">
+          <h3>Choose a State:</h3>
+           <select class="form-control" id="inputtedState">
+             <option label="Choose a State"></option>
+             <option>Oregon</option>
+             <option disabled="">Washington</option>
+             <option disabled="">California</option>
+         </select>
+        </div>
+<!-- Question 2: Camping Style -->
+          <div class="Style">
+          <h3>Preferred Camping Style:</h3>
+          <div class="custom-controls-stacked">
+            <label class="custom-control custom-radio">
+              <input id="tent" name="campStyle" type="radio" class="custom-control-input" value="tent">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Tent Camping</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input id="rv" name="campStyle" type="radio" class="custom-control-input" value="rv">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">RV Camping</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input id="lodging" name="campStyle" type="radio" class="custom-control-input" value="lodge">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Cabin</span>
+            </label>
+          </div>
+        </div>
+        <div class="Setting">
+          <h3>Choose a Setting:</h3>
+          <div class="custom-controls-stacked">
+            <label class="custom-control custom-radio">
+              <input id="coast" name="settingStyle" type="radio" class="custom-control-input" value="coast">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Coast</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input id="mountain" name="settingStyle" type="radio" class="custom-control-input" value="mountain">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Mountains</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input id="river" name="settingStyle" type="radio" class="custom-control-input" value="river">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Rivers</span>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="output">
+        <h3>Your best match is displayed below:</h3>
+        <div class="div-1">
+          <img class="imgTent" src="img/tent.jpg" alt="tent"/>
+          <div><img src="img/tent-icon.png" alt="" /><span> Tent</span></div>
+          <div><img src="img/river-icon.png" alt="" /><span> River</span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
