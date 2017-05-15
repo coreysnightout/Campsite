@@ -40,7 +40,7 @@
               <span class="custom-control-description">RV Camping</span>
             </label>
             <label class="custom-control custom-radio">
-              <input id="lodging" name="campStyle" type="radio" class="custom-control-input" value="lodge">
+              <input id="lodging" name="campStyle" type="radio" class="custom-control-input" value="cabin">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Cabin</span>
             </label>
@@ -73,10 +73,17 @@
       <div class="output">
         <h3>Your best match is displayed below:</h3>
         <div class="div-1">
-        <span class="displayImage"></span><!--image of selection-->
+
+          <img class="imgStyle" src="img/tent.jpg" alt="tent"/>
+          <div><img src="img/tent-icon.png" alt="" /><span> Tent</span></div>
+          <div><img src="img/river-icon.png" alt="" /><span> River</span></div>
+          <div><img src="img/cost-icon.png" alt="" /><span id="theCost"> $:</span></div>
+
+        <span class="displafImage"></span><!--image of selection-->
         <span class="displayStyle"></span><!--tent,rv,cabin-->
         <span class="displaySetting"></span><!--river,mountain,coast-->
         <span class="displayPrice"></span><!--price varies-->
+
         </div>
         <button type="button" name="button">Select</button>
         </div>
