@@ -14,14 +14,15 @@ function Campsite(style, setting, price, styleIcon, settingIcon) {
 };
 
 //  USER CONSTRUCTOR
-function User(style, setting, numberOfPeople, price) {
+function User(style, setting, numberOfPeople, numberOfNights, price) {
   // this.userName = name;
   // this.userEmail = email;
   this.userStyle = style;
   this.userSetting = setting;
+  this.userNumberOfPeople = numberOfPeople;
+  this.userNumberOfNights = numberOfNights;
   this.userPrice = price;
   this.userState = "Oregon";
-  this.userNumberOfPeople = numberOfPeople;
 };
 
 // function Content(user, campsite) {
@@ -30,11 +31,10 @@ function User(style, setting, numberOfPeople, price) {
 // };
 
 
-User.prototype.calculateTotalCost = function(cost) {
-  console.log(this.userNumberOfPeople);
-  cost = 5 + this.userNumberOfPeople;
-  console.log(this.userNumberOfPeople);
-  return cost;
+User.prototype.calculateTotalCost = function() {
+  this.userPrice = this.userNumberOfPeople * this.userNumberOfNights * "campsitePrice"
+  return this.userPrice;
+
 };
 // Campsite.prototype.calculateTotalCost = function(foo) {
 //
@@ -53,14 +53,19 @@ User.prototype.findCampsite = function(campsiteArray) {
 
 //  UI LOGIC--------------------------
 $(document).ready(function() {
+  var selectedStyle;
+  var selectedSetting;
+  var userPrice;
+  var userNumberOfNights;
+  var userNumberOfPeople;
+  var newUser;
+
   $(".userInput").submit(function(event) {
     event.preventDefault();
 
     var selectedStyle = $("input[name=campStyle]:checked").val();
     var selectedSetting = $("input[name=settingStyle]:checked").val();
-    var userPrice = 5;
-    var userNumberOfPeople = 2;
-    var newUser = new User(selectedStyle, selectedSetting, userPrice, userNumberOfPeople);
+    var newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
     var tentMountain = new Campsite("tent", "mountain", 5, "<img src='img/tent-icon.png'>");
@@ -82,7 +87,6 @@ $(document).ready(function() {
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
 
-    var temp = newUser.calculateTotalCost();
 
       //  DISPLAYS CONTENT IN HTML
     // $("#theCost").text(findCampsiteReturn.sitePrice)
@@ -92,6 +96,22 @@ $(document).ready(function() {
     $(".settingIcon").append(findCampsiteReturn.siteSettingIcon)
     // $("").text(findCampsiteReturn.siteState)
     // $("").text(findCampsiteReturn.siteURL)
-    console.log(temp);
-  }); // .submit
+
+
+    $(".formTwo").submit(function(event) {
+      event.preventDefault();
+
+      var NumberOfNights = parseInt($("input#nights").val());
+      var NumberOfPeople = parseInt($("input#people").val());
+
+      newUser.userNumberOfNights = NumberOfNights;
+      newUser.userNumberOfPeople = NumberOfPeople;
+
+        console.log(NumberOfNights, NumberOfPeople)
+      var x = newUser.calculateTotalCost();
+      console.log(newUser.userNumberOfNights);
+      console.log(x);
+    }); // .submit 2
+  }); // .submit 1
+
 });  // doc.ready
