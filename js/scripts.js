@@ -84,6 +84,13 @@ $(document).ready(function() {
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
 
+    // $("").text(findCampsiteReturn.siteState)
+    // $("").text(findCampsiteReturn.siteURL)
+    $(".output").show(500);
+    $("#partTwo").show(500);
+    $(".formOne").slideUp(500);
+
+
     //  TRANSITION STYLING
     $(".output").show(500);
     $("#partTwo").show(500);
