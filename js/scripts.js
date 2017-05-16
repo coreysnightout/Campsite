@@ -31,8 +31,8 @@ function User(style, setting, numberOfPeople, numberOfNights, price) {
 // };
 
 
-User.prototype.calculateTotalCost = function() {
-  this.userPrice = this.userNumberOfPeople * this.userNumberOfNights * "campsitePrice"
+User.prototype.calculateTotalCost = function(campPrice) {
+  this.userPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice
   return this.userPrice;
 
 };
@@ -60,7 +60,7 @@ $(document).ready(function() {
   var userNumberOfPeople;
   var newUser;
 
-  $(".userInput").submit(function(event) {
+  $(".formOne").submit(function(event) {
     event.preventDefault();
 
     var selectedStyle = $("input[name=campStyle]:checked").val();
@@ -89,14 +89,16 @@ $(document).ready(function() {
 
 
       //  DISPLAYS CONTENT IN HTML
-    // $("#theCost").text(findCampsiteReturn.sitePrice)
-    $(".displayStyle").text(findCampsiteReturn.siteStyle)
-    $(".displaySetting").text(findCampsiteReturn.siteSetting)
-    $(".styleIcon").append(findCampsiteReturn.siteStyleIcon)
-    $(".settingIcon").append(findCampsiteReturn.siteSettingIcon)
+    $("#totalCost").text(" $" + findCampsiteReturn.sitePrice + " Per night per person");
+    $(".displayStyle").text(" " + findCampsiteReturn.siteStyle);
+    $(".displaySetting").text(" " + findCampsiteReturn.siteSetting);
+    $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
+    $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
     // $("").text(findCampsiteReturn.siteState)
     // $("").text(findCampsiteReturn.siteURL)
-
+    $(".output").show();
+    $("#partTwo").show();
+    $(".formOne").slideUp(500);
 
     $(".formTwo").submit(function(event) {
       event.preventDefault();
@@ -104,13 +106,15 @@ $(document).ready(function() {
       var NumberOfNights = parseInt($("input#nights").val());
       var NumberOfPeople = parseInt($("input#people").val());
 
+      var totalPrice = findCampsiteReturn.sitePrice;
+      console.log(totalPrice);
       newUser.userNumberOfNights = NumberOfNights;
       newUser.userNumberOfPeople = NumberOfPeople;
 
-        console.log(NumberOfNights, NumberOfPeople)
-      var x = newUser.calculateTotalCost();
+
+      var totalCost = newUser.calculateTotalCost(totalPrice);
       console.log(newUser.userNumberOfNights);
-      console.log(x);
+      console.log(totalCost);
     }); // .submit 2
   }); // .submit 1
 

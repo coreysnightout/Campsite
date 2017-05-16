@@ -33,3 +33,11 @@ span {
   border-radius: 5px;
   width: 45%;
 }
+
+.output {
+  display: none;
+}
+
+#partTwo {
+  display: none;
+}
