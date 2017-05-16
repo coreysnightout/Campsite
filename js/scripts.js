@@ -15,8 +15,8 @@ function Campsite(style, setting, price, styleIcon, settingIcon) {
 
 //  USER CONSTRUCTOR
 function User(style, setting, numberOfPeople, numberOfNights, price) {
-  // this.userName = name;
-  // this.userEmail = email;
+  this.userName = "";
+  this.userEmail = "";
   this.userStyle = style;
   this.userSetting = setting;
   this.userNumberOfPeople = numberOfPeople;
@@ -114,15 +114,33 @@ $(document).ready(function() {
       //
       var totalCost = newUser.calculateTotalCost(totalPrice);
 
-      $("#output2").show();
+      $("#output2").show(500);
       $(".totalNights").text(" " + NumberOfNights + " nights");
       $(".totalPeople").text(" " + NumberOfPeople + " people");
       $(".totalCost").text(" Your reservation will cost " + "$" + totalCost);
       // console.log(newUser.userNumberOfNights);
       // console.log(totalCost);
       $("#partTwo").slideUp(500);
+      $("#reset").click(function(event) {
+        form.reset();
+      });
+      $(".formThree").submit(function(event) {
+        event.preventDefault();
 
+        // TRANSITION STYLEING
+        $("#form-three").slideUp(500)
 
+        //  COLLECTS VALUES FROM FORMTHREE
+        newUser.userName = $("#userFullName").val();
+        newUser.userEmail = $("#userEmail").val();
+
+        //  APPENDS CONTENT
+        $("#foo").append('<div> Thank you, ' +
+                        newUser.userName +
+                        ' we have sent a confirmation email to ' +
+                        newUser.userEmail +
+                        '.</div>')
+      }); // .submit 3
     }); // .submit 2
   }); // .submit 1
 });  // doc.ready

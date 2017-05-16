@@ -1,5 +1,7 @@
 body{
+
   background-color: #e8e1cd;
+
 }
 .imgStyle {
   max-width: 300px;
@@ -9,7 +11,9 @@ body{
 span {
   font-size: 22px;
 }
+
 * {
+
   font-weight: bolder;
 }
 .div-1 {
@@ -86,6 +90,40 @@ padding-top: 70px;
 .btn-primary {
   background-color: #c65f32;
   border-color: #c65f32;
+}
+.custom-control-input input[type=radio]{
+  background-color: #6f7d44;
+}
+
+
+.title{
+  height: 260px;
+  text-align: center;
+  background-position: bottom;
+  background-image: url("http://img15.deviantart.net/1967/i/2009/185/8/b/camp_wallpaper_1680x1050_by_joshdsign.jpg");
+  margin-bottom: 30px;
+}
+input[type=radio]{
+  background-color: red;
+  position: absolute;
+  display: none;
+}
+label:hover{
+	color: #c2552a;
+}
+.title h1{
+font-family: 'Architects Daughter', cursive;
+font-size: 75px;
+padding-left: 20px;
+padding-top: 70px;
+}
+.container{
+  font-family: 'Dosis', sans-serif;
+
+}
+.btn-primary {
+  background-color: #6f7d44;
+  border-color: #6f7d44;
 }
 .custom-control-input input[type=radio]{
   background-color: #6f7d44;

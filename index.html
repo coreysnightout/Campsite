@@ -117,8 +117,18 @@
           <div><img src="img/cost-icon.png" alt="" /><span class="totalCost"></span></div>
 
         </div>
-        <button type="button" class="btn btn-primary">Confirm</button>
-        <button type="button" class="btn btn-primary">Reset Form</button>
+        <form id="form-three" class="formThree">
+          <div class="form-group finalInput">
+            <label for="userFullName">Full name:</label>
+            <input type="text" class="form-control" id="userFullName" placeholder="Full name">
+            <label for="userEmail">Email address:</label>
+            <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+          </div>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+        <button type="reset" value="Reset" class="btn btn-primary" onclick="window.location.reload()">Reset Form</button>
+      </form>
+      <span id="foo"></span>
+
       </div>
     </div>
   </body>
