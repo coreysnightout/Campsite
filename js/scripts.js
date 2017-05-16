@@ -25,24 +25,14 @@ function User(style, setting, numberOfPeople, numberOfNights, price) {
   this.userState = "Oregon";
 };
 
-// function Content(user, campsite) {
-//   this.User = user;
-//   this.Campsite = campsite;
-// };
-
-
+  //  CALCULATES THE TOTAL COST
 User.prototype.calculateTotalCost = function(campPrice) {
   this.userPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice
   return this.userPrice;
 
 };
-// Campsite.prototype.calculateTotalCost = function(foo) {
-//
-//   this.userPrice = foo.sitePrice * this.numberOfPeople
-//   return this.userPrice
-// };
 
-  //  CHECKS USER'S INPUT TO EACH CAMPSITE OBJECT
+  //  CHECKS USER'S INPUT TO EACH CAMPSITE OBJECT AND RETURNS A MATCH
 User.prototype.findCampsite = function(campsiteArray) {
   for (i = 0; i <= campsiteArray.length; i++) {
     if (this.userStyle === campsiteArray[i].siteStyle && this.userSetting === campsiteArray[i].siteSetting) {
@@ -53,19 +43,21 @@ User.prototype.findCampsite = function(campsiteArray) {
 
 //  UI LOGIC--------------------------
 $(document).ready(function() {
-  var selectedStyle;
-  var selectedSetting;
-  var userPrice;
-  var userNumberOfNights;
-  var userNumberOfPeople;
-  var newUser;
-
+  //  FIRST SUBMIT BUTTON
   $(".formOne").submit(function(event) {
     event.preventDefault();
+    var selectedStyle;
+    var selectedSetting;
+    var userPrice;
+    var userNumberOfNights;
+    var userNumberOfPeople;
 
-    var selectedStyle = $("input[name=campStyle]:checked").val();
-    var selectedSetting = $("input[name=settingStyle]:checked").val();
-    var newUser = new User(selectedStyle, selectedSetting);
+    //  COLLCTS DATA FROM FIRST FORM
+    selectedStyle = $("input[name=campStyle]:checked").val();
+    selectedSetting = $("input[name=settingStyle]:checked").val();
+
+    //  INITALIZES USER OBJECT
+    newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
     var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>");
@@ -78,11 +70,8 @@ $(document).ready(function() {
     var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>");
     var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>");
 
-
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
-
-    //  COLLECTS USER INPUT INTO VARIANLES
 
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
@@ -94,28 +83,39 @@ $(document).ready(function() {
     $(".displaySetting").text(" " + findCampsiteReturn.siteSetting);
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
-    // $("").text(findCampsiteReturn.siteState)
-    // $("").text(findCampsiteReturn.siteURL)
-    $(".output").show();
-    $("#partTwo").show();
-    $(".formOne").slideUp(500);
 
+    //  TRANSITION STYLING
+    $(".output").show(500);
+    $("#partTwo").show(500);
+    $(".formOne").slideUp(800);
+
+    //  SECOND SUBMIT BUTTON
     $(".formTwo").submit(function(event) {
       event.preventDefault();
 
-      var NumberOfNights = parseInt($("input#nights").val());
-      var NumberOfPeople = parseInt($("input#people").val());
+      //  COLLECTS USER INPUT
+      NumberOfNights = parseInt($("input#nights").val());
+      NumberOfPeople = parseInt($("input#people").val());
 
-      var totalPrice = findCampsiteReturn.sitePrice;
-      console.log(totalPrice);
+      //  ASSIGNS ABOVE USER INPUT TO NEWUSER PROPERTIES
       newUser.userNumberOfNights = NumberOfNights;
       newUser.userNumberOfPeople = NumberOfPeople;
 
+      //  HOLDS SITEPRICE PROPERTY OF CAMPSITE OBJECT RETURNED IN FINDCAMPSITE FUNCTION
+      var totalPrice = findCampsiteReturn.sitePrice;
 
+      //
       var totalCost = newUser.calculateTotalCost(totalPrice);
-      console.log(newUser.userNumberOfNights);
-      console.log(totalCost);
+
+      $("#output2").show();
+      $(".totalNights").text(" " + NumberOfNights + " nights");
+      $(".totalPeople").text(" " + NumberOfPeople + " people");
+      $(".totalCost").text(" Your reservation will cost " + "$" + totalCost);
+      // console.log(newUser.userNumberOfNights);
+      // console.log(totalCost);
+      $("#partTwo").slideUp(500);
+
+
     }); // .submit 2
   }); // .submit 1
-
 });  // doc.ready

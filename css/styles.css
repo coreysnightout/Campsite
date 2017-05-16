@@ -10,7 +10,7 @@ span {
 .div-1 {
   /*display: none;*/
   margin: 5px;
-  border: 2px black solid;
+  border: 2px green solid;
   padding: 5px;
   border-radius: 5px;
   /*width: 45%;*/
@@ -39,5 +39,9 @@ span {
 }
 
 #partTwo {
+  display: none;
+}
+
+#output2 {
   display: none;
 }
