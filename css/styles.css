@@ -1,5 +1,5 @@
 body{
-  background-color: #ece2c4;
+  background-color: #e8e1cd;
 }
 .imgStyle {
   max-width: 300px;
@@ -9,35 +9,43 @@ body{
 span {
   font-size: 22px;
 }
-h1, h2, h3 {
+* {
   font-weight: bolder;
 }
 .div-1 {
   /*display: none;*/
-  margin: 5px;
-  border: 2px green solid;
-  padding: 5px;
+  /*margin: 5px;*/
+  /*border: 2px green solid;*/
+  padding: 20px;
   border-radius: 5px;
-  /*width: 45%;*/
+  background-color: #bdc3a9;
+  height: 360px;
+  /*width: 400px;*/
+}
+.col-md-6{
+  float: left;
+}
+.bigPhoto img{
+  float: right;
+  width: 100%;
 }
 
-.div-2 {
-  /*display: none;*/
+.row{
+  margin: 30px 0;
+}
+#nameOfCamping{
+  font-family: 'Architects Daughter', cursive;
+  font-size:32px;
+}
+
+/*.div-3 {
+  display: none;
   margin: 5px;
   border: 2px black solid;
   padding: 5px;
   border-radius: 5px;
   width: 45%;
-}
-
-.div-3 {
-  /*display: none;*/
-  margin: 5px;
-  border: 2px black solid;
-  padding: 5px;
-  border-radius: 5px;
-  width: 45%;
-}
+}*/
 
 .output {
   display: none;
@@ -46,7 +54,9 @@ h1, h2, h3 {
 #partTwo {
   display: none;
 }
-
+.displayStyle, .displaySetting, #totalCost {
+  margin-left: 20px;
+}
 
 .title{
   height: 260px;
@@ -74,8 +84,8 @@ padding-top: 70px;
 
 }
 .btn-primary {
-  background-color: #6f7d44;
-  border-color: #6f7d44;
+  background-color: #c65f32;
+  border-color: #c65f32;
 }
 .custom-control-input input[type=radio]{
   background-color: #6f7d44;
