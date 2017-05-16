@@ -15,7 +15,7 @@ h1, h2, h3 {
 .div-1 {
   /*display: none;*/
   margin: 5px;
-  border: 2px black solid;
+  border: 2px green solid;
   padding: 5px;
   border-radius: 5px;
   /*width: 45%;*/
@@ -46,6 +46,7 @@ h1, h2, h3 {
 #partTwo {
   display: none;
 }
+
 
 .title{
   height: 260px;
@@ -78,4 +79,8 @@ padding-top: 70px;
 }
 .custom-control-input input[type=radio]{
   background-color: #6f7d44;
+}
+
+#output2 {
+  display: none;
 }
