@@ -96,8 +96,8 @@ $(document).ready(function() {
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
     // $("").text(findCampsiteReturn.siteState)
     // $("").text(findCampsiteReturn.siteURL)
-    $(".output").show();
-    $("#partTwo").show();
+    $(".output").show(500);
+    $("#partTwo").show(500);
     $(".formOne").slideUp(500);
 
     $(".formTwo").submit(function(event) {
