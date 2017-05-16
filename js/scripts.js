@@ -14,15 +14,33 @@ function Campsite(style, setting, price, styleIcon, settingIcon) {
 };
 
 //  USER CONSTRUCTOR
-function User(style, setting, name, email, price, numberOfPeople) {
-  this.userName = name;
-  this.userEmail = email;
+function User(style, setting, numberOfPeople, price) {
+  // this.userName = name;
+  // this.userEmail = email;
   this.userStyle = style;
   this.userSetting = setting;
   this.userPrice = price;
   this.userState = "Oregon";
   this.userNumberOfPeople = numberOfPeople;
 };
+
+// function Content(user, campsite) {
+//   this.User = user;
+//   this.Campsite = campsite;
+// };
+
+
+User.prototype.calculateTotalCost = function(cost) {
+  console.log(this.userNumberOfPeople);
+  cost = 5 + this.userNumberOfPeople;
+  console.log(this.userNumberOfPeople);
+  return cost;
+};
+// Campsite.prototype.calculateTotalCost = function(foo) {
+//
+//   this.userPrice = foo.sitePrice * this.numberOfPeople
+//   return this.userPrice
+// };
 
   //  CHECKS USER'S INPUT TO EACH CAMPSITE OBJECT
 User.prototype.findCampsite = function(campsiteArray) {
@@ -38,6 +56,12 @@ $(document).ready(function() {
   $(".userInput").submit(function(event) {
     event.preventDefault();
 
+    var selectedStyle = $("input[name=campStyle]:checked").val();
+    var selectedSetting = $("input[name=settingStyle]:checked").val();
+    var userPrice = 5;
+    var userNumberOfPeople = 2;
+    var newUser = new User(selectedStyle, selectedSetting, userPrice, userNumberOfPeople);
+
     //  INITIALIZING CAMPING OBJECTS
     var tentMountain = new Campsite("tent", "mountain", 5, "<img src='img/tent-icon.png'>");
     var tentCoast = new Campsite("tent", "coast", 5, "<img src='img/tent-icon.png'>");
@@ -49,16 +73,16 @@ $(document).ready(function() {
     var cabinCoast = new Campsite("cabin", "coast", 15);
     var cabinRiver = new Campsite("cabin", "river", 15);
 
+
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
 
     //  COLLECTS USER INPUT INTO VARIANLES
-    var selectedStyle = $("input[name=campStyle]:checked").val();
-    var selectedSetting = $("input[name=settingStyle]:checked").val();
-    newUser = new User(selectedStyle, selectedSetting);
 
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
+
+    var temp = newUser.calculateTotalCost();
 
       //  DISPLAYS CONTENT IN HTML
     // $("#theCost").text(findCampsiteReturn.sitePrice)
@@ -68,6 +92,6 @@ $(document).ready(function() {
     $(".settingIcon").append(findCampsiteReturn.siteSettingIcon)
     // $("").text(findCampsiteReturn.siteState)
     // $("").text(findCampsiteReturn.siteURL)
-
+    console.log(temp);
   }); // .submit
 });  // doc.ready
