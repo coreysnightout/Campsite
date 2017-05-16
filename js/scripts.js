@@ -68,15 +68,15 @@ $(document).ready(function() {
     var newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
-    var tentMountain = new Campsite("tent", "mountain", 5, "<img src='img/tent-icon.png'>");
-    var tentCoast = new Campsite("tent", "coast", 5, "<img src='img/tent-icon.png'>");
-    var tentRiver = new Campsite("tent", "river", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>");
-    var rvMountain = new Campsite("rv", "mountain", 10);
-    var rvCoast = new Campsite("rv", "coast", 10);
-    var rvRiver = new Campsite("rv", "river", 10);
-    var cabinMountain = new Campsite("cabin", "mountain", 15);
-    var cabinCoast = new Campsite("cabin", "coast", 15);
-    var cabinRiver = new Campsite("cabin", "river", 15);
+    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>");
+    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>");
+    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>");
+    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>");
+    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>");
+    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>");
+    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>");
+    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>");
+    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>");
 
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
