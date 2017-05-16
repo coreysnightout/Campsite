@@ -114,7 +114,9 @@ $(document).ready(function() {
       // console.log(newUser.userNumberOfNights);
       // console.log(totalCost);
       $("#partTwo").slideUp(500);
-
+      $("#reset").click(function(event) {
+        form.reset();
+      });
 
     }); // .submit 2
   }); // .submit 1
