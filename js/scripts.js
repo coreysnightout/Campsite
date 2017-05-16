@@ -117,6 +117,9 @@ $(document).ready(function() {
       $("#reset").click(function(event) {
         form.reset();
       });
+      $(".formThree").submit(function(event) {
+        event.preventDefault();
+      });
 
     }); // .submit 2
   }); // .submit 1
