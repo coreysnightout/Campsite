@@ -86,7 +86,7 @@ $(document).ready(function() {
     $(".campsiteAddress").text(findCampsiteReturn.siteAddress);
 
     $("address").each(function(){
-        var embed ="<iframe width='505' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+        var embed ="<iframe width='518' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
                                     $(this).html(embed);
 
        });
@@ -152,7 +152,7 @@ $(document).ready(function() {
         newUser.userEmail = $("#userEmail").val();
 
         //  APPENDS CONTENT
-        $("#foo").append('<div> Thank you, ' +
+        $("#finalOutput").append('<div> Thank you, ' +
                         newUser.userName +
                         ' we have sent a confirmation email to ' +
                         newUser.userEmail +
