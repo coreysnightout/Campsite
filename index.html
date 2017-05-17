@@ -24,7 +24,7 @@
 <!-- Question 1: What State -->
         <div class="form-group">
           <h3>Choose a State:</h3>
-           <select class="form-control" id="inputtedState">
+           <select class="form-control" id="inputtedState" required="">
              <option label="Choose a State"></option>
              <option>Oregon</option>
              <option disabled="">Washington</option>
@@ -99,11 +99,11 @@
       <div id="partTwo">
         <form class="formTwo"><!--2nd form that targets dates and length of stay-->
           <h3>What day would you like to arrive?</h3>
-          <input id="date" type="date" name="bday">
+          <input id="date" type="date" name="arrivalDate">
           <h3>How many nights would you like to stay?</h3>
-          <input id="nights" type="number">
+          <input id="nights" type="number" required="">
           <h3>How many people will be staying?</h3>
-          <input id="people" type="number">
+          <input id="people" type="number" required="">
           <button id="formTwoButton" type="submit" class="btn btn-primary" name="submit">Submit</button>
         </form><!--ends 2nd form-->
       </div>
@@ -114,6 +114,7 @@
           <div class="div-1 col-md-12">
             <div class="col-md-6">
               <h4>Your Trip Details</h4>
+              <div><img src="img/calendar.png"/><span class="calendarDate"></span></div>
               <div><img src="img/night.png"/><span class="totalNights"></span></div><!--price coording to user form2-->
               <div class="middle"><img src="img/hiking.png"/><span class="totalPeople"></span></div>
               <div><img src="img/cost-icon.png" alt="" /><span class="totalCost"></span></div>
@@ -132,9 +133,9 @@
         <form id="form-three" class="formThree">
           <div class="form-group finalInput">
             <label for="userFullName">Full name:</label>
-            <input type="text" class="form-control" id="userFullName" placeholder="Full name">
+            <input type="text" class="form-control" id="userFullName" placeholder="Full name" required="">
             <label class="email" for="userEmail">Email address:</label>
-            <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+            <input type="email" class="form-control" id="userEmail" placeholder="Enter email" required="">
           </div>
         <button type="submit" class="btn btn-primary">Confirm</button>
         <button type="reset" value="Reset" class="btn btn-primary" onclick="window.location.reload()">Reset Form</button>
