@@ -6,7 +6,11 @@ h1, h2 {
   font-weight: bolder;
 }
 
-
+.map {
+  /*width: 518px;*/
+  height: 315px;
+  width: 100%;
+  }
 
 
 
@@ -24,8 +28,9 @@ span {
 }
 
 .bigPhoto {
-  width: 518px;
-  height: 315px;
+  /*width: 518px;
+  height: 315px;*/
+  width: 100%;
   overflow: hidden;
 }
 
@@ -152,4 +157,22 @@ padding-top: 70px;
   font-size: 30px;
   color: #c46237;
   text-align: center;
+}
+@media (min-width: 800px) and (max-width: 1200px){
+  .container {
+    margin: 0 5%;
+  }
+  .div-1{
+    height: 380px;
+  }
+}
+@media (min-width: 200px) and (max-width: 800px) {
+
+  .col-md-6{
+    width: 100%;
+  }
+  .div-1{
+    height: 100%;
+  }
+
 }
