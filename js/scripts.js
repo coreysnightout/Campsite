@@ -1,7 +1,7 @@
 //  BUSINESS LOGIC--------------------------
 
  // CAMPSITE CONSTRUCTOR
-function Campsite(style, setting, price, styleIcon, settingIcon) {
+function Campsite(style, setting, price, styleIcon, settingIcon, name) {
   this.siteStyle = style;
   this.siteSetting = setting;
   this.sitePrice = price;
@@ -9,8 +9,8 @@ function Campsite(style, setting, price, styleIcon, settingIcon) {
   this.siteURL = "url";
   this.siteStyleIcon = styleIcon;
   this.siteSettingIcon = settingIcon;
-  this.sitePriceIcon = "priceIcon";
   this.siteMainImg = "mainImg";
+  this.siteName = name;
 };
 
 //  USER CONSTRUCTOR
@@ -57,18 +57,18 @@ $(document).ready(function() {
     selectedSetting = $("input[name=settingStyle]:checked").val();
 
     //  INITALIZES USER OBJECT
-    newUser = new User(selectedStyle, selectedSetting);
+    var newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
-    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>");
-    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>");
-    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>");
-    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>");
-    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>");
-    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>");
-    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>");
-    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>");
-    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>");
+    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain campground");
+    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area");
+    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "River Camp");
+    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "Cape Perpetua campground");
+    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "Stub Stewart State Park");
+    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "Oxbow Regional Park");
+    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park");
+    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground");
+    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground");
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
@@ -83,12 +83,7 @@ $(document).ready(function() {
     $(".displaySetting").text(" " + findCampsiteReturn.siteSetting);
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
-
-    // $("").text(findCampsiteReturn.siteState)
-    // $("").text(findCampsiteReturn.siteURL)
-    $(".output").show(500);
-    $("#partTwo").show(500);
-    $(".formOne").slideUp(500);
+    $("#nameOfCamping").text(" " + findCampsiteReturn.siteName);
 
 
     //  TRANSITION STYLING
