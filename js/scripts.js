@@ -22,11 +22,12 @@ function User(style, setting, numberOfPeople, numberOfNights, price) {
   this.userTotalPrice = price;
   this.userName = "";
   this.userEmail = "";
+  this.userCalendar = "";
 };
 
   //  CALCULATES AND RETURNS THE TOTAL COST
 User.prototype.calculateTotalCost = function(campPrice) {
-  this.userTotalPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice
+  this.userTotalPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice;
   return this.userTotalPrice;
 
 };
@@ -95,7 +96,7 @@ $(document).ready(function() {
     //  TRANSITION STYLING
     $(".output").show(500);
     $("#partTwo").show(500);
-    $(".formOne").slideUp(800);
+    $(".formOne").slideUp(500);
 
     //  -----------------------------------------------------SECOND SUBMIT BUTTON-----------------------------------------------------
     $(".formTwo").submit(function(event) {
@@ -104,10 +105,12 @@ $(document).ready(function() {
       //  COLLECTS AND STORES USER INPUT INTO .userNumberOfNights AND .userNumberOfPeople PROPERTIES
       newUser.userNumberOfNights = parseInt($("input#nights").val());
       newUser.userNumberOfPeople = parseInt($("input#people").val());
+      newUser.userCalendar = $('input[type="date"]').val();
 
       //  DISPLAYS userNumberOfNights AND userNumberOfPeople
       $(".totalNights").text(newUser.userNumberOfNights + " nights");
       $(".totalPeople").text(newUser.userNumberOfPeople + " people");
+      $(".calendarDate").text("Your reservation starts on " + newUser.userCalendar + ".")
 
       //  CALLS calculateTotalCost AND DISPLAYS IN totalCost CLASS
       $(".totalCost").text(" Your reservation will cost " + "$" + newUser.calculateTotalCost(findCampsiteReturn.sitePrice));
