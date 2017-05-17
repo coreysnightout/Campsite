@@ -1,7 +1,9 @@
 //  BUSINESS LOGIC--------------------------
 
  // CAMPSITE CONSTRUCTOR
+
 function Campsite(style, setting, price, styleIcon, settingIcon, name, address) {
+
   this.siteStyle = style;
   this.siteSetting = setting;
   this.sitePrice = price;
@@ -9,9 +11,11 @@ function Campsite(style, setting, price, styleIcon, settingIcon, name, address) 
   this.siteURL = "url";
   this.siteStyleIcon = styleIcon;
   this.siteSettingIcon = settingIcon;
+
   this.siteMainImg = "mainImg";
   this.siteName = name;
   this.siteAddress = address;
+
 };
 
 //  USER CONSTRUCTOR
@@ -61,6 +65,7 @@ $(document).ready(function() {
     var newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
+
     var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain Campground", "Crack in the Ground Rd, Silver Lake, OR 97638");
     var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area", "72601 OR-82, Wallowa, OR 97885");
     var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "Marsters Spring campground", "42.558826, -120.774129");
@@ -70,6 +75,7 @@ $(document).ready(function() {
     var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park", "Cascadia State Park, Cascadia, OR 97329");
     var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground", "42.892457, -122.462465");
     var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground", "42.731500, -121.420325");
+
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
@@ -96,7 +102,9 @@ $(document).ready(function() {
     $(".displaySetting").text(" " + findCampsiteReturn.siteSetting);
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
+
     $("#nameOfCamping").text(" " + findCampsiteReturn.siteName);
+
 
 
     //  TRANSITION STYLING
