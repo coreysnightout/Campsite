@@ -1,7 +1,9 @@
 //  BUSINESS LOGIC--------------------------
 
  // CAMPSITE CONSTRUCTOR
-function Campsite(style, setting, price, styleIcon, settingIcon, mainImg) {
+
+function Campsite(style, setting, price, styleIcon, settingIcon, name, address) {
+
   this.siteStyle = style;
   this.siteSetting = setting;
   this.sitePrice = price;
@@ -9,8 +11,11 @@ function Campsite(style, setting, price, styleIcon, settingIcon, mainImg) {
   this.siteURL = "url";
   this.siteStyleIcon = styleIcon;
   this.siteSettingIcon = settingIcon;
-  this.sitePriceIcon = "priceIcon";
-  this.siteMainImg = mainImg;
+
+  this.siteMainImg = "mainImg";
+  this.siteName = name;
+  this.siteAddress = address;
+
 };
 
 //  USER CONSTRUCTOR
@@ -57,24 +62,38 @@ $(document).ready(function() {
     selectedSetting = $("input[name=settingStyle]:checked").val();
 
     //  INITALIZES USER OBJECT
-    newUser = new User(selectedStyle, selectedSetting);
+    var newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
-    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "<img src='img/tent-mtn.jpg'>");
-    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "<img src='img/tent-coast2.jpg'>");
-    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "<img src='img/tent-river.jpg'>");
-    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "<img src='img/trailer-mtn.jpg'>");
-    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "<img src='img/trailer-coast2.jpg'>");
-    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "<img src='img/trailer-river.png'>");
-    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "<img src='img/cabin-mtn.jpg'>");
-    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "<img src='img/cabin-coast.jpg'>");
-    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "<img src='img/cabin-river.jpg'>");
+
+    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain Campground", "Crack in the Ground Rd, Silver Lake, OR 97638");
+    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area", "72601 OR-82, Wallowa, OR 97885");
+    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "Marsters Spring campground", "42.558826, -120.774129");
+    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "Cape Perpetua campground", "Siuslaw National Forest, 2200 US-101, Yachats, OR 97498");
+    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "Stub Stewart State Park", "L.L. Stub Stewart State Park, Buxton, OR 97109");
+    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "Oxbow Regional Park", "3010 SE Oxbow Pkwy, Gresham, OR 97080");
+    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park", "Cascadia State Park, Cascadia, OR 97329");
+    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground", "42.892457, -122.462465");
+    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground", "42.731500, -121.420325");
+
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
 
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
+
+    $(".campsiteAddress").text(findCampsiteReturn.siteAddress);
+
+    $("address").each(function(){
+        var embed ="<iframe width='505' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+                                    $(this).html(embed);
+
+       });
+
+
+
+
 
 
       //  DISPLAYS CONTENT IN HTML
@@ -83,12 +102,9 @@ $(document).ready(function() {
     $(".displaySetting").text(" " + findCampsiteReturn.siteSetting);
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
-    $(".bigPhoto").append(findCampsiteReturn.siteMainImg);
-    // $("").text(findCampsiteReturn.siteState)
-    // $("").text(findCampsiteReturn.siteURL)
-    $(".output").show(500);
-    $("#partTwo").show(500);
-    $(".formOne").slideUp(500);
+
+    $("#nameOfCamping").text(" " + findCampsiteReturn.siteName);
+
 
 
     //  TRANSITION STYLING
