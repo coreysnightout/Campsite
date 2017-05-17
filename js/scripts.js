@@ -30,7 +30,6 @@ function User(style, setting, numberOfPeople, numberOfNights, price) {
 User.prototype.calculateTotalCost = function(campPrice) {
   this.userTotalPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice;
   return this.userTotalPrice;
-
 };
 
   //  CHECKS USER'S INPUT TO EACH CAMPSITE OBJECT AND RETURNS THE MATCHING OBJECT
@@ -44,6 +43,8 @@ User.prototype.findCampsite = function(campsiteArray) {
 
 //  --------------------------UI LOGIC--------------------------
 $(document).ready(function() {
+  $(".intro").fadeOut(2000);
+
   //  -----------------------------------------------------FIRST SUBMIT BUTTON-----------------------------------------------------
   $(".formOne").submit(function(event) {
     event.preventDefault();
