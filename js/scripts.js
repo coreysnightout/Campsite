@@ -88,7 +88,7 @@ $(document).ready(function() {
 
     //  FINDS ADDRESS TAGS IN HTML AND REPLACES ADDRESS WITH GOOGLE MAP.
     $("address").each(function(){
-      var embed ="<iframe width='505' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+      var embed ="<iframe class='map' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
       $(this).html(embed);
     });  //  ABOVE FUNCTION WAS CREATED BY MICHEL JASPER AND FOUND ON STACKOVERFLOW. SEE README FOR MORE INFORMATION.
 
