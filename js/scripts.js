@@ -1,59 +1,53 @@
-//  BUSINESS LOGIC--------------------------
+//  --------------------------BUSINESS LOGIC--------------------------
 
  // CAMPSITE CONSTRUCTOR
-
 function Campsite(style, setting, price, styleIcon, settingIcon, name, address, mainImg) {
-
   this.siteStyle = style;
   this.siteSetting = setting;
   this.sitePrice = price;
-  this.siteState = "Oregon";
-  this.siteURL = "url";
   this.siteStyleIcon = styleIcon;
   this.siteSettingIcon = settingIcon;
-
-  this.siteMainImg = mainImg;
   this.siteName = name;
   this.siteAddress = address;
+  this.siteMainImg = mainImg;
 
 };
 
 //  USER CONSTRUCTOR
 function User(style, setting, numberOfPeople, numberOfNights, price) {
-  this.userName = "";
-  this.userEmail = "";
-  this.userStyle = style;
-  this.userSetting = setting;
+  this.userChosenStyle = style;
+  this.userChosenSetting = setting;
   this.userNumberOfPeople = numberOfPeople;
   this.userNumberOfNights = numberOfNights;
-  this.userPrice = price;
-  this.userState = "Oregon";
+  this.userTotalPrice = price;
+  this.userName = "";
+  this.userEmail = "";
 };
 
-  //  CALCULATES THE TOTAL COST
+  //  CALCULATES AND RETURNS THE TOTAL COST
 User.prototype.calculateTotalCost = function(campPrice) {
-  this.userPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice
-  return this.userPrice;
+  this.userTotalPrice = this.userNumberOfPeople * this.userNumberOfNights * campPrice
+  return this.userTotalPrice;
 
 };
 
-  //  CHECKS USER'S INPUT TO EACH CAMPSITE OBJECT AND RETURNS A MATCH
+  //  CHECKS USER'S INPUT TO EACH CAMPSITE OBJECT AND RETURNS THE MATCHING OBJECT
 User.prototype.findCampsite = function(campsiteArray) {
   for (i = 0; i <= campsiteArray.length; i++) {
-    if (this.userStyle === campsiteArray[i].siteStyle && this.userSetting === campsiteArray[i].siteSetting) {
+    if (this.userChosenStyle === campsiteArray[i].siteStyle && this.userChosenSetting === campsiteArray[i].siteSetting) {
       return campsiteArray[i]
     }
   }
 };
 
-//  UI LOGIC--------------------------
+//  --------------------------UI LOGIC--------------------------
 $(document).ready(function() {
-  //  FIRST SUBMIT BUTTON
+  //  -----------------------------------------------------FIRST SUBMIT BUTTON-----------------------------------------------------
   $(".formOne").submit(function(event) {
     event.preventDefault();
     var selectedStyle;
     var selectedSetting;
-    var userPrice;
+    var userTotalPrice;
     var userNumberOfNights;
     var userNumberOfPeople;
 
@@ -64,8 +58,7 @@ $(document).ready(function() {
     //  INITALIZES USER OBJECT
     var newUser = new User(selectedStyle, selectedSetting);
 
-    //  INITIALIZING CAMPING OBJECTS
-
+    //  INITIALIZES CAMPING OBJECTS
     var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain Campground", "Crack in the Ground Rd, Silver Lake, OR 97638", "<img src='img/tent-mtn.jpg'>");
     var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area", "72601 OR-82, Wallowa, OR 97885", "<img src='img/tent-coast2.jpg'>");
     var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "Marsters Spring campground", "42.558826, -120.774129", "<img src='img/tent-river.jpg'>");
@@ -76,24 +69,11 @@ $(document).ready(function() {
     var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground", "42.892457, -122.462465", "<img src='img/cabin-coast.jpg'>");
     var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground", "42.731500, -121.420325", "<img src='img/cabin-river.jpg'>");
 
-
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
 
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
-
-    $(".campsiteAddress").text(findCampsiteReturn.siteAddress);
-
-    $("address").each(function(){
-        var embed ="<iframe width='518' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
-                                    $(this).html(embed);
-
-       });
-
-
-
-
 
 
       //  DISPLAYS CONTENT IN HTML
@@ -103,61 +83,63 @@ $(document).ready(function() {
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
     $(".mainImg").append(findCampsiteReturn.siteMainImg);
-
     $("#nameOfCamping").text(" " + findCampsiteReturn.siteName);
+    $(".campsiteAddress").text(findCampsiteReturn.siteAddress);
 
-
+    //  FINDS ADDRESS TAGS IN HTML AND REPLACES ADDRESS WITH GOOGLE MAP.
+    $("address").each(function(){
+      var embed ="<iframe width='505' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+      $(this).html(embed);
+    });  //  ABOVE FUNCTION WAS CREATED BY MICHEL JASPER AND FOUND ON STACKOVERFLOW. SEE README FOR MORE INFORMATION.
 
     //  TRANSITION STYLING
     $(".output").show(500);
     $("#partTwo").show(500);
     $(".formOne").slideUp(800);
 
-    //  SECOND SUBMIT BUTTON
+    //  -----------------------------------------------------SECOND SUBMIT BUTTON-----------------------------------------------------
     $(".formTwo").submit(function(event) {
       event.preventDefault();
 
-      //  COLLECTS USER INPUT
-      NumberOfNights = parseInt($("input#nights").val());
-      NumberOfPeople = parseInt($("input#people").val());
+      //  COLLECTS AND STORES USER INPUT INTO .userNumberOfNights AND .userNumberOfPeople PROPERTIES
+      newUser.userNumberOfNights = parseInt($("input#nights").val());
+      newUser.userNumberOfPeople = parseInt($("input#people").val());
 
-      //  ASSIGNS ABOVE USER INPUT TO NEWUSER PROPERTIES
-      newUser.userNumberOfNights = NumberOfNights;
-      newUser.userNumberOfPeople = NumberOfPeople;
+      //  DISPLAYS userNumberOfNights AND userNumberOfPeople
+      $(".totalNights").text(newUser.userNumberOfNights + " nights");
+      $(".totalPeople").text(newUser.userNumberOfPeople + " people");
 
-      //  HOLDS SITEPRICE PROPERTY OF CAMPSITE OBJECT RETURNED IN FINDCAMPSITE FUNCTION
-      var totalPrice = findCampsiteReturn.sitePrice;
+      //  CALLS calculateTotalCost AND DISPLAYS IN totalCost CLASS
+      $(".totalCost").text(" Your reservation will cost " + "$" + newUser.calculateTotalCost(findCampsiteReturn.sitePrice));
 
-      //
-      var totalCost = newUser.calculateTotalCost(totalPrice);
-
+      //  TRANSITION STYLING
       $("#output2").show(500);
-      $(".totalNights").text(" " + NumberOfNights + " nights");
-      $(".totalPeople").text(" " + NumberOfPeople + " people");
-      $(".totalCost").text(" Your reservation will cost " + "$" + totalCost);
-      // console.log(newUser.userNumberOfNights);
-      // console.log(totalCost);
       $("#partTwo").slideUp(500);
+
+      //  RESETS THE FORM VIA PAGE REFRESH
       $("#reset").click(function(event) {
         form.reset();
       });
+      // -----------------------------------------------------THIRD SUBMIT BUTTON-----------------------------------------------------
       $(".formThree").submit(function(event) {
         event.preventDefault();
 
-        // TRANSITION STYLEING
+        // TRANSITION STYLING
         $("#form-three").slideUp(500)
 
-        //  COLLECTS VALUES FROM FORMTHREE
+        //  COLLECTS AND STORES USER INPUT INTO .userName and .userEmail PROPERTIES
         newUser.userName = $("#userFullName").val();
         newUser.userEmail = $("#userEmail").val();
 
-        //  APPENDS CONTENT
+
+        //  APPENDS CONTENT INTO finalOutput ID
         $("#finalOutput").append('<div> Thank you, ' +
-                        newUser.userName +
-                        ' we have sent a confirmation email to ' +
+                        newUser.userName + "!<br>" +
+                        ' We have sent a confirmation email to ' +
+
                         newUser.userEmail +
                         '.</div>')
-      }); // .submit 3
-    }); // .submit 2
-  }); // .submit 1
-});  // doc.ready
+      });  //  formThree.submit
+    });  //  formTwo.submit
+  });  //  formOne.submit
+});  //  doc.ready
