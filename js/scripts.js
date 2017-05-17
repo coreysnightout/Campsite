@@ -131,10 +131,12 @@ $(document).ready(function() {
         newUser.userName = $("#userFullName").val();
         newUser.userEmail = $("#userEmail").val();
 
+
         //  APPENDS CONTENT INTO finalOutput ID
         $("#finalOutput").append('<div> Thank you, ' +
                         newUser.userName + "!<br>" +
                         ' We have sent a confirmation email to ' +
+
                         newUser.userEmail +
                         '.</div>')
       });  //  formThree.submit

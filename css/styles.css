@@ -1,56 +1,69 @@
 body{
-
+  font-weight: bold;
   background-color: #e8e1cd;
+}
+h1, h2 {
+  font-weight: bolder;
+}
 
-}
-.bigPhoto {
-  width: 505px;
-  height: 315px;
-  overflow: hidden;
-}
+
+
+
+
 
 span {
   font-size: 22px;
 }
 
-* {
-
+.formOne h3{
   font-weight: bolder;
 }
+
+.row{
+  margin: 30px 0;
+}
+
+.bigPhoto {
+  width: 518px;
+  height: 315px;
+  overflow: hidden;
+}
+
 .div-1 {
-  /*display: none;*/
-  /*margin: 5px;*/
-  /*border: 2px green solid;*/
   padding: 20px;
   border-radius: 5px;
   background-color: #bdc3a9;
-  height: 360px;
-  /*width: 400px;*/
+  height: 353px;
 }
+
 .col-md-6{
   float: left;
+}
+
+.middle img{
+  padding: 20px 0;
 }
 .bigPhoto img{
   float: right;
   width: 100%;
 }
 
-.row{
-  margin: 30px 0;
-}
 #nameOfCamping{
   font-family: 'Architects Daughter', cursive;
-  font-size:32px;
+  font-size:34px;
+  font-weight: bold;
 }
 
-/*.div-3 {
-  display: none;
-  margin: 5px;
-  border: 2px black solid;
-  padding: 5px;
-  border-radius: 5px;
-  width: 45%;
-}*/
+.div-1 h3{
+  padding-bottom: 32px;
+}
+
+.div-1 h4 {
+  font-family: 'Architects Daughter', cursive;
+  font-size:30px;
+  font-weight: bold;
+  padding-bottom: 32px;
+}
 
 .output {
   display: none;
@@ -59,7 +72,7 @@ span {
 #partTwo {
   display: none;
 }
-.displayStyle, .displaySetting, #totalCost {
+.displayStyle, .displaySetting, #totalCost, .totalNights, .totalPeople, .totalCost  {
   margin-left: 20px;
 }
 
@@ -84,10 +97,7 @@ font-size: 75px;
 padding-left: 20px;
 padding-top: 70px;
 }
-.container{
-  font-family: 'Dosis', sans-serif;
 
-}
 .btn-primary {
   background-color: #c65f32;
   border-color: #c65f32;
@@ -120,7 +130,7 @@ padding-top: 70px;
 }
 .container{
   font-family: 'Dosis', sans-serif;
-
+  padding-bottom: 35px;
 }
 .btn-primary {
   background-color: #6f7d44;
@@ -132,4 +142,14 @@ padding-top: 70px;
 
 #output2 {
   display: none;
+}
+
+.email {
+  padding-top: 10px;
+}
+
+#finalOutput {
+  font-size: 30px;
+  color: #c46237;
+  text-align: center;
 }
