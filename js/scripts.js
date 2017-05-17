@@ -2,7 +2,7 @@
 
  // CAMPSITE CONSTRUCTOR
 
-function Campsite(style, setting, price, styleIcon, settingIcon, name, address) {
+function Campsite(style, setting, price, styleIcon, settingIcon, name, address, mainImg) {
 
   this.siteStyle = style;
   this.siteSetting = setting;
@@ -12,7 +12,7 @@ function Campsite(style, setting, price, styleIcon, settingIcon, name, address) 
   this.siteStyleIcon = styleIcon;
   this.siteSettingIcon = settingIcon;
 
-  this.siteMainImg = "mainImg";
+  this.siteMainImg = mainImg;
   this.siteName = name;
   this.siteAddress = address;
 
@@ -66,15 +66,15 @@ $(document).ready(function() {
 
     //  INITIALIZING CAMPING OBJECTS
 
-    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain Campground", "Crack in the Ground Rd, Silver Lake, OR 97638");
-    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area", "72601 OR-82, Wallowa, OR 97885");
-    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "Marsters Spring campground", "42.558826, -120.774129");
-    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "Cape Perpetua campground", "Siuslaw National Forest, 2200 US-101, Yachats, OR 97498");
-    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "Stub Stewart State Park", "L.L. Stub Stewart State Park, Buxton, OR 97109");
-    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "Oxbow Regional Park", "3010 SE Oxbow Pkwy, Gresham, OR 97080");
-    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park", "Cascadia State Park, Cascadia, OR 97329");
-    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground", "42.892457, -122.462465");
-    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground", "42.731500, -121.420325");
+    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain Campground", "Crack in the Ground Rd, Silver Lake, OR 97638", "<img src='img/tent-mtn.jpg'>");
+    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area", "72601 OR-82, Wallowa, OR 97885", "<img src='img/tent-coast2.jpg'>");
+    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "Marsters Spring campground", "42.558826, -120.774129", "<img src='img/tent-river.jpg'>");
+    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "Cape Perpetua campground", "Siuslaw National Forest, 2200 US-101, Yachats, OR 97498", "<img src='img/trailer-mtn.jpg'>");
+    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "Stub Stewart State Park", "L.L. Stub Stewart State Park, Buxton, OR 97109", "<img src='img/trailer-coast2.jpg'>");
+    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "Oxbow Regional Park", "3010 SE Oxbow Pkwy, Gresham, OR 97080", "<img src='img/trailer-river.png'>");
+    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park", "Cascadia State Park, Cascadia, OR 97329", "<img src='img/cabin-mtn.jpg'>");
+    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground", "42.892457, -122.462465", "<img src='img/cabin-coast.jpg'>");
+    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground", "42.731500, -121.420325", "<img src='img/cabin-river.jpg'>");
 
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
@@ -102,6 +102,7 @@ $(document).ready(function() {
     $(".displaySetting").text(" " + findCampsiteReturn.siteSetting);
     $(".styleIcon").append(" " + findCampsiteReturn.siteStyleIcon);
     $(".settingIcon").append(" " + findCampsiteReturn.siteSettingIcon);
+    $(".mainImg").append(findCampsiteReturn.siteMainImg);
 
     $("#nameOfCamping").text(" " + findCampsiteReturn.siteName);
 
