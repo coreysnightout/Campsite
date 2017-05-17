@@ -3,9 +3,10 @@ body{
   background-color: #e8e1cd;
 
 }
-.imgStyle {
-  max-width: 300px;
-  max-height: auto;
+.bigPhoto {
+  width: 505px;
+  height: 315px;
+  overflow: hidden;
 }
 
 span {
