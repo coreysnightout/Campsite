@@ -2,172 +2,168 @@ body{
   font-weight: bold;
   background-color: #e8e1cd;
 }
+.container{
+  font-family: 'Dosis', sans-serif;
+  padding-bottom: 35px;
+}
 h1, h2 {
   font-weight: bolder;
 }
-
-.map {
-  /*width: 518px;*/
-  height: 315px;
-  width: 100%;
-  }
-
-
-
-
-span {
-  font-size: 22px;
+/* HEADER */
+.title{
+  height: 260px;
+  text-align: center;
+  background-position: bottom;
+  background-image: url("http://img15.deviantart.net/1967/i/2009/185/8/b/camp_wallpaper_1680x1050_by_joshdsign.jpg");
+  margin-bottom: 30px;
 }
 
+/* FORM AREA */
 .formOne h3{
   font-weight: bolder;
 }
 
-.row{
-  margin: 30px 0;
+input[type='radio'] {
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 5px 0px gray inset;
+}
+input[type='radio']:hover {
+    box-shadow:0 0 5px 0px orange inset;
+}
+input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;
+    border-radius:50%;
+}
+input[type='radio']:checked:before {
+    background: #c2552a;
 }
 
-.bigPhoto {
-  /*width: 518px;
-  height: 315px;*/
-  width: 100%;
-  overflow: hidden;
+label:hover{
+  color: #c2552a;
 }
 
+.btn-primary {
+  background-color: #6f7d44;
+  border-color: #6f7d44;
+}
+.btn-primary:hover{
+  background-color: #9fad76;
+  border-color: #6f7d44;
+}
+
+.custom-control-input input[type=radio]{
+  background-color: #6f7d44;
+}
+.reset{
+  background-color: #c2552a;
+}
+
+/* OUTPUT ONE AREA */
+.output {
+  display: none;
+}
 .div-1 {
   padding: 20px;
   border-radius: 5px;
   background-color: #bdc3a9;
-  height: 353px;
+  height: 425px;
 }
-
+.row{
+  margin: 30px 0;
+}
 .col-md-6{
   float: left;
 }
-
+.map {
+  height: 385px;
+  width: 100%;
+}
+span {
+  font-size: 22px;
+}
+.bigPhoto {
+  height: 385px;
+  width: 100%;
+  overflow: hidden;
+}
+#nameOfCamping{
+  font-family: 'Patrick Hand SC', cursive;
+  font-size:34px;
+  font-weight: bold;
+}
+.div-1 h3{
+  padding-bottom: 13px;
+}
 .middle img{
   padding: 20px 0;
 }
 .bigPhoto img{
   float: right;
   width: 100%;
+  height: 390px;
+}
+.amenities{
+  margin-right: 20px;
 }
 
-#nameOfCamping{
-  font-family: 'Architects Daughter', cursive;
-  font-size:34px;
-  font-weight: bold;
+.anomolies {
+  margin-left: 20px;
 }
+/*.anomolies img {
+  padding-top: -10px;
+}*/
 
-.div-1 h3{
-  padding-bottom: 32px;
-}
-
+/* OUTPUT AREA 2 */
 .div-1 h4 {
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Patrick Hand SC', cursive;
   font-size:30px;
   font-weight: bold;
-  padding-bottom: 32px;
 }
-
-.output {
-  display: none;
-}
-
 #partTwo {
   display: none;
 }
-.displayStyle, .displaySetting, #totalCost, .totalNights, .totalPeople, .totalCost  {
+.displayStyle, .displaySetting, #totalCost, .totalNights, .totalPeople, .totalCost, .calendarDate, .amenities {
   margin-left: 20px;
 }
-
-.title{
-  height: 260px;
-  text-align: center;
-  background-position: bottom;
-  background-image: url("http://img15.deviantart.net/1967/i/2009/185/8/b/camp_wallpaper_1680x1050_by_joshdsign.jpg");
-  margin-bottom: 30px;
-}
-input[type=radio]{
-  background-color: red;
-  position: absolute;
-  display: none;
-}
-label:hover{
-	color: #c2552a;
-}
 .title h1{
-font-family: 'Architects Daughter', cursive;
-font-size: 75px;
-padding-left: 20px;
-padding-top: 70px;
-}
-
-.btn-primary {
-  background-color: #c65f32;
-  border-color: #c65f32;
-}
-.custom-control-input input[type=radio]{
-  background-color: #6f7d44;
-}
-
-
-.title{
-  height: 260px;
-  text-align: center;
-  background-position: bottom;
-  background-image: url("http://img15.deviantart.net/1967/i/2009/185/8/b/camp_wallpaper_1680x1050_by_joshdsign.jpg");
-  margin-bottom: 30px;
-}
-input[type=radio]{
-  background-color: red;
-  position: absolute;
-  display: none;
-}
-label:hover{
-	color: #c2552a;
-}
-.title h1{
-font-family: 'Architects Daughter', cursive;
-font-size: 75px;
-padding-left: 20px;
-padding-top: 70px;
-}
-.container{
-  font-family: 'Dosis', sans-serif;
-  padding-bottom: 35px;
-}
-.btn-primary {
-  background-color: #6f7d44;
-  border-color: #6f7d44;
-}
-.custom-control-input input[type=radio]{
-  background-color: #6f7d44;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 75px;
+  padding-left: 20px;
+  padding-top: 70px;
 }
 
 #output2 {
   display: none;
 }
 
+/* OUTPUT AREA 3 */
 .email {
   padding-top: 10px;
 }
-
 #finalOutput {
   font-size: 30px;
   color: #c46237;
   text-align: center;
 }
+
 @media (min-width: 800px) and (max-width: 1200px){
   .container {
     margin: 0 5%;
   }
   .div-1{
-    height: 380px;
+    height: 430px;
   }
 }
 @media (min-width: 200px) and (max-width: 800px) {
-
   .col-md-6{
     width: 100%;
   }
