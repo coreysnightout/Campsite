@@ -1,7 +1,7 @@
 //  BUSINESS LOGIC--------------------------
 
  // CAMPSITE CONSTRUCTOR
-function Campsite(style, setting, price, styleIcon, settingIcon, name) {
+function Campsite(style, setting, price, styleIcon, settingIcon, name, address) {
   this.siteStyle = style;
   this.siteSetting = setting;
   this.sitePrice = price;
@@ -11,6 +11,7 @@ function Campsite(style, setting, price, styleIcon, settingIcon, name) {
   this.siteSettingIcon = settingIcon;
   this.siteMainImg = "mainImg";
   this.siteName = name;
+  this.siteAddress = address;
 };
 
 //  USER CONSTRUCTOR
@@ -60,21 +61,33 @@ $(document).ready(function() {
     var newUser = new User(selectedStyle, selectedSetting);
 
     //  INITIALIZING CAMPING OBJECTS
-    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain campground");
-    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area");
-    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "River Camp");
-    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "Cape Perpetua campground");
-    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "Stub Stewart State Park");
-    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "Oxbow Regional Park");
-    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park");
-    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground");
-    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground");
+    var tentMountain = new Campsite("Tent", "Mountain", 5, "<img src='img/tent-icon.png'>", "<img src='img/mountains-icon.png'>", "Green Mountain Campground", "Crack in the Ground Rd, Silver Lake, OR 97638");
+    var tentCoast = new Campsite("Tent", "Coast", 5, "<img src='img/tent-icon.png'>", "<img src='img/coast-icon.png'>", "Minam State Recreation Area", "72601 OR-82, Wallowa, OR 97885");
+    var tentRiver = new Campsite("Tent", "River", 5, "<img src='img/tent-icon.png'>", "<img src='img/river-icon.png'/>", "Marsters Spring campground", "42.558826, -120.774129");
+    var rvMountain = new Campsite("RV", "Mountain", 10, "<img src='img/trailer-icon.png'>", "<img src='img/mountains-icon.png'>", "Cape Perpetua campground", "Siuslaw National Forest, 2200 US-101, Yachats, OR 97498");
+    var rvCoast = new Campsite("RV", "Coast", 10, "<img src='img/trailer-icon.png'>", "<img src='img/coast-icon.png'>", "Stub Stewart State Park", "L.L. Stub Stewart State Park, Buxton, OR 97109");
+    var rvRiver = new Campsite("RV", "River", 10, "<img src='img/trailer-icon.png'>", "<img src='img/river-icon.png'>", "Oxbow Regional Park", "3010 SE Oxbow Pkwy, Gresham, OR 97080");
+    var cabinMountain = new Campsite("Cabin", "Mountain", 15, "<img src='img/cabin-icon.png'>", "<img src='img/mountains-icon.png'>", "Cascadia State Park", "Cascadia State Park, Cascadia, OR 97329");
+    var cabinCoast = new Campsite("Cabin", "Coast", 15, "<img src='img/cabin-icon.png'>", "<img src='img/coast-icon.png'>", "Natural Bridge campground", "42.892457, -122.462465");
+    var cabinRiver = new Campsite("Cabin", "River", 15, "<img src='img/cabin-icon.png'>", "<img src='img/river-icon.png'>", "Head of the River campground", "42.731500, -121.420325");
 
     //  ARRAY THAT HOLDS EACH CAMPING OBJECT
     var campsiteArray = [tentMountain, tentCoast, tentRiver, rvMountain, rvCoast, rvRiver, cabinMountain, cabinCoast, cabinRiver];
 
     //  HOLDS THE RETURNED VALUE OF FINDCAMPSITE PROTOTYPE FUNCTION
     var findCampsiteReturn = newUser.findCampsite(campsiteArray);
+
+    $(".campsiteAddress").text(findCampsiteReturn.siteAddress);
+
+    $("address").each(function(){
+        var embed ="<iframe width='505' height='315' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+                                    $(this).html(embed);
+
+       });
+
+
+
+
 
 
       //  DISPLAYS CONTENT IN HTML
