@@ -49,10 +49,6 @@ $(document).ready(function() {
     $(".intro").fadeOut('slow');
   });
 
-
-
-
-
   //  -----------------------------------------------------FIRST SUBMIT BUTTON-----------------------------------------------------
   $(".formOne").submit(function(event) {
     event.preventDefault();
@@ -136,9 +132,11 @@ $(document).ready(function() {
     });  //  ABOVE FUNCTION WAS CREATED BY MICHEL JASPER AND FOUND ON STACKOVERFLOW. SEE README FOR MORE INFORMATION.
 
     //  TRANSITION STYLING
-    $(".output").show(500);
-    $("#partTwo").show(500);
     $(".formOne").slideUp(500);
+    $(".bigMap").slideUp(500);
+    $("#partTwo").delay(500).fadeIn(500);
+    $(".output").delay(500).fadeIn(500);
+
 
     //  -----------------------------------------------------SECOND SUBMIT BUTTON-----------------------------------------------------
     $(".formTwo").submit(function(event) {
@@ -181,7 +179,6 @@ $(document).ready(function() {
         $("#finalOutput").append('<div> Thank you, ' +
                         newUser.userName + "!<br>" +
                         ' We have sent a confirmation email to ' +
-
                         newUser.userEmail +
                         '.</div>')
       });  //  formThree.submit
