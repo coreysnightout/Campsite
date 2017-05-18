@@ -18,61 +18,65 @@
     <div class="container1">
       <h2 class="smallHeader">Welcome to Campsite Finder!</h2>
       <p>Find the perfect spot for your getaway! Just tell us what you are looking for!</p>
-      <form class="formOne">
+        <form class="formOne ">
 <!-- FormOne, Question 1 -->
-        <div class="form-group">
-          <h3>Choose a State:</h3>
-          <select class="form-control" id="inputtedState" required="">
-            <option label="Choose a State"></option>
-            <option>Oregon</option>
-            <option disabled="">Washington</option>
-            <option disabled="">California</option>
-          </select>
-        </div>
-<!-- FormOne, Question 2 -->
-        <div class="Style">
-          <h3>Preferred Camping Style:</h3>
-          <div class="custom-controls-stacked">
-            <label>
-              <input id="Tent" name="campStyle" type="radio"  value="Tent">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Tent Camping</span>
-            </label>
-            <label>
-              <input id="RV" name="campStyle" type="radio"  value="RV">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">RV Camping</span>
-            </label>
-            <label>
-              <input id="Lodging" name="campStyle" type="radio"  value="Cabin">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Cabin</span>
-            </label>
+          <div class="form-group">
+            <h3>Choose a State:</h3>
+            <select class="form-control" id="inputtedState" required="">
+              <option label="Choose a State"></option>
+              <option>Oregon</option>
+              <option disabled="">Washington</option>
+              <option disabled="">California</option>
+            </select>
           </div>
-        </div>
-<!-- FormOne, Question 3 -->
-        <div class="Setting">
-          <h3>Choose a Setting:</h3>
-          <div class="custom-controls-stacked">
-            <label >
-              <input id="Coast" name="settingStyle" type="radio" value="Coast">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Coast</span>
-            </label>
-            <label >
-              <input id="Mountain" name="settingStyle" type="radio"  value="Mountain">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Mountains</span>
-            </label>
-            <label >
-              <input id="River" name="settingStyle" type="radio" value="River">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Rivers</span>
-            </label>
+  <!-- FormOne, Question 2 -->
+          <div class="Style">
+            <h3>Preferred Camping Style:</h3>
+            <div class="custom-controls-stacked">
+              <label>
+                <input id="Tent" name="campStyle" type="radio"  value="Tent">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Tent Camping</span>
+              </label>
+              <label>
+                <input id="RV" name="campStyle" type="radio"  value="RV">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">RV Camping</span>
+              </label>
+              <label>
+                <input id="Lodging" name="campStyle" type="radio"  value="Cabin">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Cabin</span>
+              </label>
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+  <!-- FormOne, Question 3 -->
+          <div class="Setting">
+            <h3>Choose a Setting:</h3>
+            <div class="custom-controls-stacked">
+              <label >
+                <input id="Coast" name="settingStyle" type="radio" value="Coast">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Coast</span>
+              </label>
+              <label >
+                <input id="Mountain" name="settingStyle" type="radio"  value="Mountain">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Mountains</span>
+              </label>
+              <label >
+                <input id="River" name="settingStyle" type="radio" value="River">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Rivers</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+          <div class="bigMap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1435219.9145858297!2d-123.75114834744655!3d45.36568765902568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scamping+sites!5e0!3m2!1sen!2sus!4v1495131834410" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+
 <!-- FormOne Results-->
       <div class="output">
         <h3>Your best match is displayed below:</h3>
