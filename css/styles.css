@@ -208,6 +208,22 @@ span {
   text-align: center;
 }
 
+footer {
+  display: none;
+  text-align: center;
+  margin-top: 250px;
+  background-color: #c76034;
+  height: 125px;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+}
+
+
+footer img {
+  margin-top: 35px;
+}
+
 @media (min-width: 800px) and (max-width: 1200px){
   .container {
     margin: 0 5%;

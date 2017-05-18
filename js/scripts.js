@@ -47,6 +47,7 @@ $(document).ready(function() {
   $(".introLink").click(function(event) {
     event.preventDefault();
     $(".intro").fadeOut('slow');
+    $(".footer").show();
   });
 
   //  -----------------------------------------------------FIRST SUBMIT BUTTON-----------------------------------------------------
