@@ -18,7 +18,7 @@
     </div>
     <div class="container">
 
-      <h2>Welcome to Campsite Finder!</h2>
+      <h2 class="smallHeader">Welcome to Campsite Finder!</h2>
       <p>Find the perfect spot for your getaway! Just tell us what you are looking for!</p>
 
       <form class="formOne">
@@ -102,11 +102,11 @@
       <div id="partTwo">
         <form class="formTwo"><!--2nd form that targets dates and length of stay-->
           <h3>What day would you like to arrive?</h3>
-          <input id="date" type="date" name="arrivalDate">
+          <input id="date" class="form-control "type="date" name="arrivalDate">
           <h3>How many nights would you like to stay?</h3>
-          <input id="nights" type="number" required="">
+          <input id="nights" class="form-control" type="number" required="">
           <h3>How many people will be staying?</h3>
-          <input id="people" type="number" required="">
+          <input id="people" class="form-control" type="number" required=""><br>
           <button id="formTwoButton" type="submit" class="btn btn-primary" name="submit">Submit</button>
         </form><!--ends 2nd form-->
       </div>
@@ -149,7 +149,8 @@
       <span id="finalOutput"></span>
     </div>
     <div class="intro">
-      <img src="img/tent-intro.png" alt="pic of a tent" />
+      <img src="img/tent-intro.png" alt="pic of a tent" /><br><br>
+      <a class="introLink" href="url">Enter Campsite Finder</a>
     </div>
   </body>
 </html>
