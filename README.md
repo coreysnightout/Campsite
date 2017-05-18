@@ -1,44 +1,30 @@
-##Specs
-* User submits a style.
-  Input: tent / rv / cabin.
-  Output: return what is selected and a corresponding image.
-* User submits a setting.
-  Input: mountains / coast / river.
-  Output: return what is selected and a corresponding image.
-* User submits state.
-  Input: Oregon / Washington / California.
-  Output: return what is selected and a corresponding image.
-* User submits a date for beginning of reservation.
-  Input: picks a date on digital calendar.
-  Output: return what is selected and a corresponding image.
-* Program will display cost per night per person.
-  Input: User fills out form of style and setting.
-  Output: Returns cost of location per person per night.
-* User submits a name and email.
-  Input: enters name and email address.
-  Output: program sends reservation information.
-* User is asked how many nights they will be staying.
-  Input: User inputs a number.
-  Output: return the number of nights with corresponding image.
-* User is asked how many people will be staying.
-  Input: User inputs a number.
-  Output: return the number of people in the group.
-* Program will return cost of entire trip in reference to the number of nights and number of people in party.
-  Input: User enters the number of nights and number of people.
-  Output: Program returns total cost of trip.
-* User is asked to make a reservation or to start over.
-  Input: User selects "Make Reservation".
-  Output: User is informed reservation was successful.
+# Campsite Finder
 
-# _{Campsite Finder}_
+#### User fills out a series of forms and suggested camping locations are returned., 5/17/2017
 
-#### _{User fills out a series of forms and suggested camping locations are returned.}, {5/17/2017}_
-
-#### By _**{Jordan Loop, Corey Redding, Daniella Trulls, Beth Hansen}**_
+#### By Jordan Loop, Corey Redding, Daniella Trulls, Beth Hansen
 
 ## Description
 
-_{A web application that allows users to pick their style, setting, location and date of their preferred camping getaway. The application also displays addresses of campsites that fit their personal preferences onto a digital map, as well as includes pictures of the picked campsite.}_
+A web application that allows users to pick their style, setting, location and date of their preferred camping getaway. The application also displays addresses of campsites that fit their personal preferences onto a digital map, as well as includes pictures of the picked campsite.
+
+
+## Specs
+
+|                Behavior<br>Our program should handle:                | Input example<br>When it receives:  |                          Output example<br>It should return:                         |
+|:--------------------------------------------------------------------:|:-----------------------------------:|:------------------------------------------------------------------------------------:|
+|                     User selects a camping style.                    |          tent / RV / cabin.         |                  return what is selected and a corresponding image.                  |
+|                        User selects a setting.                       |      mountains / coast / river.     |                  return what is selected and a corresponding image.                  |
+|                          User submits state.                         |  Oregon / Washington / California.  |                            return campsites in that State.                           |
+| Program displays content matching the user style, setting and State. |          push "Submit" button         | Returns matching campsite with cost for one person staying one night, and amenities. |
+|           User submits a date for beginning of reservation.          |              04/06/2017             |                                 return selected date.                                |
+|          User is asked how many nights they will be staying.         |                  3                  |                      return "3 nights" with corresponding image.                     |
+|            User is asked how many people will be staying.            |                  2                  |                      return "2 people" with corresponding image.                     |
+|            Program will display cost per night per person.           |          push Submit button         |         Returns total cost of location,  and google map of campsite location.        |
+|         User is asked to enter their name and email address.         |    "Joe Doe", "JoeDoe@email.com"    | Returns "Thank you, Joe Doe! We have sent a confirmation email to JoeDoe@email.com". |
+|                          User can reset form                         |          Press "Reset Form"         |                       Refreshes page starting the process over.                      |
+
+
 
 ## Setup/Installation Requirements
 
@@ -49,29 +35,29 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Known Bugs
 
-_{No known bugs.}_
+_No known bugs._
 
 ## Support and contact details
 
-_{If you need help, have any concerns or comments please send them to jordloop@gmail.com}_
+_If you need help, have any concerns or comments please send them to jordloop@gmail.com_
 
 ## Technologies Used
 
-_{HTML/CSS/Bootstrap}_
-_{JavaScript/jQuery}_
+_HTML/CSS/Bootstrap_
+_JavaScript/jQuery_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+Determine the license under which this application can be used.  See below for more details on licensing.
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2017
 
 
 ## Acknowledgments
 
 Michel Jasper:
-We used Michel's code to display a dynamic google map.
-http://stackoverflow.com/questions/1300838/how-to-convert-an-address-into-a-google-maps-link-not-map/7898520#7898520
+We used Michel's code to display a dynamic google map.<br>
+http://stackoverflow.com/questions/1300838/how-to-convert-an-address-into-a-google-maps-link-not-map/7898520#7898520<br>
 http://www.mikedoesweb.com/2012/convert-tag-to-google-maps-embed-automatically-with-jquery/
 
 MadeByOliver:
