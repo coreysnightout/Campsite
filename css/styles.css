@@ -1,25 +1,23 @@
+/* ------------- INTRO--------------------- */
 .intro {
   padding-top: 100px;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 150%;
   position: absolute;
   background-color: #C46235;
   left: 0px;
   top: 0px;
   z-index: 50;
 }
-
 .introLink {
-  text-align: center;
   color: white;
   margin-top: 50px;
 }
-
 a:hover {
   color: #6f7d44;
 }
-
+/* ------------- GENETAL SETTIONS--------------------- */
 body{
   font-weight: bold;
   background-color: #e8e1cd;
@@ -28,16 +26,8 @@ body{
   font-family: 'Dosis', sans-serif;
   padding-bottom: 155px;
   margin: 2% 10%;
-
 }
-h1, h2 {
-  font-weight: bolder;
-}
-
-.smallHeader {
-  font-size: 40px;
-}
-/* HEADER */
+/* ------------- HEADER--------------------- */
 .title{
   height: 260px;
   text-align: center;
@@ -45,8 +35,20 @@ h1, h2 {
   background-image: url("http://img15.deviantart.net/1967/i/2009/185/8/b/camp_wallpaper_1680x1050_by_joshdsign.jpg");
   margin-bottom: 25px;
 }
-
-/* FORM AREA */
+/* ------------- TITLES--------------------- */
+h1, h2 {
+  font-weight: bolder;
+}
+.title h1{
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 85px;
+  padding-left: 20px;
+  padding-top: 70px;
+}
+.smallHeader {
+  font-size: 40px;
+}
+/* ------------- FORM AREA 1--------------------- */
 .formOne{
   float:left;
 }
@@ -80,13 +82,8 @@ input[type='radio']:before {
 input[type='radio']:checked:before {
     background: #c2552a;
 }
-
 label:hover{
   color: #c2552a;
-}
-.bigMap{
-  float:right;
-  margin-top: 30px;
 }
 .btn-primary {
   width: 200px;
@@ -99,15 +96,26 @@ label:hover{
   background-color: #9fad76;
   border-color: #6f7d44;
 }
-
-.custom-control-input input[type=radio]{
-  background-color: #6f7d44;
-}
 .reset{
   background-color: #c2552a;
 }
-
-/* OUTPUT ONE AREA */
+span {
+  font-size: 22px;
+}
+.row{
+  margin: 30px 0;
+}
+.col-md-6{
+  float: left;
+}
+.custom-control-input input[type=radio]{
+  background-color: #6f7d44;
+}
+.map {
+  height: 385px;
+  width: 100%;
+}
+/* ------------- OUTPUT AREA 1--------------------- */
 .output {
   display: none;
 }
@@ -116,31 +124,6 @@ label:hover{
   border-radius: 5px;
   background-color: #bdc3a9;
   height: 425px;
-}
-
-#partTwo h3{
-  font-size: 25px;
-  padding-top: 10px;
-  padding-bottom: 3px;
-}
-
-.row{
-  margin: 30px 0;
-}
-.col-md-6{
-  float: left;
-}
-.map {
-  height: 385px;
-  width: 100%;
-}
-span {
-  font-size: 22px;
-}
-.bigPhoto {
-  height: 385px;
-  width: 100%;
-  overflow: hidden;
 }
 #nameOfCamping{
   font-family: 'Patrick Hand SC', cursive;
@@ -153,6 +136,11 @@ span {
 .middle img{
   padding: 20px 0;
 }
+.bigPhoto {
+  height: 385px;
+  width: 100%;
+  overflow: hidden;
+}
 .bigPhoto img{
   float: right;
   width: 100%;
@@ -161,45 +149,42 @@ span {
 .amenities{
   margin-right: 20px;
 }
-
 .anomolies {
   margin-left: 20px;
 }
-/*.anomolies img {
-  padding-top: -10px;
-}*/
-
-/* OUTPUT AREA 2 */
+/* ------------- OUTPUT AREA 2--------------------- */
 .div-1 h4 {
   font-family: 'Patrick Hand SC', cursive;
   font-size:30px;
   font-weight: bold;
 }
+.displayStyle, .displaySetting, #totalCost, .totalNights, .totalPeople, .totalCost, .calendarDate, .amenities {
+  margin-left: 20px;
+}
+.bigMap{
+  float:right;
+  margin-top: 30px;
+}
+/* ------------- FORM AREA 2--------------------- */
 #partTwo {
   display: none;
+}
+#partTwo h3{
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 3px;
 }
 #partTwo input{
   width:30%;
 }
-.displayStyle, .displaySetting, #totalCost, .totalNights, .totalPeople, .totalCost, .calendarDate, .amenities {
-  margin-left: 20px;
-}
-.title h1{
-  font-family: 'Patrick Hand SC', cursive;
-  font-size: 85px;
-  padding-left: 20px;
-  padding-top: 70px;
-}
-
+/*  -------------OUTPUT AREA 2 -------------------*/
 #output2 {
   display: none;
 }
-
-/* OUTPUT AREA 3 */
+/* -----------OUTPUT AREA 3 ---------------------*/
 .email {
   padding-top: 10px;
 }
-
 .finalInput {
   font-size: 20px;
 }
@@ -208,7 +193,7 @@ span {
   color: #c46237;
   text-align: center;
 }
-
+/*  ------------- MEDIA QUERIES -------------------*/
 footer {
   /*display: none;*/
   text-align: center;
@@ -219,18 +204,19 @@ footer {
   bottom: 0px;
   width: 100%;
 }
-
-
 footer img {
   margin-top: 10px;
 }
-
+/*  ------------- MEDIA QUERIES -------------------*/
 @media (min-width: 800px) and (max-width: 1200px){
   .container {
     margin: 0 5%;
   }
   .div-1{
     height: 430px;
+  }
+  .bigMap{
+    width:700px;
   }
 }
 @media (min-width: 200px) and (max-width: 800px) {
@@ -240,5 +226,4 @@ footer img {
   .div-1{
     height: 100%;
   }
-
 }
