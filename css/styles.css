@@ -26,8 +26,9 @@ body{
 }
 .container1{
   font-family: 'Dosis', sans-serif;
-  padding-bottom: 35px;
+  padding-bottom: 155px;
   margin: 2% 10%;
+
 }
 h1, h2 {
   font-weight: bolder;
@@ -209,19 +210,19 @@ span {
 }
 
 footer {
-  display: none;
+  /*display: none;*/
   text-align: center;
   margin-top: 250px;
   background-color: #c76034;
-  height: 125px;
-  position: relative;
+  height: 90px;
+  position: fixed;
   bottom: 0px;
   width: 100%;
 }
 
 
 footer img {
-  margin-top: 35px;
+  margin-top: 10px;
 }
 
 @media (min-width: 800px) and (max-width: 1200px){
