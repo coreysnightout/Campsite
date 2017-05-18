@@ -43,7 +43,15 @@ User.prototype.findCampsite = function(campsiteArray) {
 
 //  --------------------------UI LOGIC--------------------------
 $(document).ready(function() {
-  $(".intro").fadeOut(2000);
+  // $(".introLink").clickable();
+  $(".introLink").click(function(event) {
+    event.preventDefault();
+    $(".intro").fadeOut('slow');
+  });
+
+
+
+
 
   //  -----------------------------------------------------FIRST SUBMIT BUTTON-----------------------------------------------------
   $(".formOne").submit(function(event) {
