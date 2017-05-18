@@ -11,85 +11,86 @@
     <meta charset="utf-8">
     <title>Campsite Finder</title>
   </head>
-
   <body>
     <div class="title">
       <h1>Campsite Finder</h1>
     </div>
-    <div class="container">
-
+    <div class="container1">
       <h2 class="smallHeader">Welcome to Campsite Finder!</h2>
       <p>Find the perfect spot for your getaway! Just tell us what you are looking for!</p>
-
-      <form class="formOne">
-<!-- Question 1: What State -->
-        <div class="form-group">
-          <h3>Choose a State:</h3>
-          <select class="form-control" id="inputtedState" required="">
-            <option label="Choose a State"></option>
-            <option>Oregon</option>
-            <option disabled="">Washington</option>
-            <option disabled="">California</option>
-          </select>
-        </div>
-<!-- Question 2: Camping Style -->
-        <div class="Style">
-        <h3>Preferred Camping Style:</h3>
-          <div class="custom-controls-stacked">
-            <label>
-              <input id="Tent" name="campStyle" type="radio"  value="Tent">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Tent Camping</span>
-            </label>
-            <label>
-              <input id="RV" name="campStyle" type="radio"  value="RV">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">RV Camping</span>
-            </label>
-            <label>
-              <input id="Lodging" name="campStyle" type="radio"  value="Cabin">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Cabin</span>
-            </label>
+        <form class="formOne ">
+<!-- FormOne, Question 1 -->
+          <div class="form-group">
+            <h3>Choose a State:</h3>
+            <select class="form-control" id="inputtedState" required="">
+              <option label="Choose a State"></option>
+              <option>Oregon</option>
+              <option disabled="">Washington</option>
+              <option disabled="">California</option>
+            </select>
           </div>
-        </div>
-        <div class="Setting">
-        <h3>Choose a Setting:</h3>
-        <div class="custom-controls-stacked">
-          <label >
-            <input id="Coast" name="settingStyle" type="radio" value="Coast">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Coast</span>
-          </label>
-          <label >
-            <input id="Mountain" name="settingStyle" type="radio"  value="Mountain">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Mountains</span>
-          </label>
-          <label >
-            <input id="River" name="settingStyle" type="radio" value="River">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">Rivers</span>
-          </label>
-        </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+  <!-- FormOne, Question 2 -->
+          <div class="Style">
+            <h3>Preferred Camping Style:</h3>
+            <div class="custom-controls-stacked">
+              <label>
+                <input id="Tent" name="campStyle" type="radio"  value="Tent">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Tent Camping</span>
+              </label>
+              <label>
+                <input id="RV" name="campStyle" type="radio"  value="RV">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">RV Camping</span>
+              </label>
+              <label>
+                <input id="Lodging" name="campStyle" type="radio"  value="Cabin">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Cabin</span>
+              </label>
+            </div>
+          </div>
+  <!-- FormOne, Question 3 -->
+          <div class="Setting">
+            <h3>Choose a Setting:</h3>
+            <div class="custom-controls-stacked">
+              <label >
+                <input id="Coast" name="settingStyle" type="radio" value="Coast">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Coast</span>
+              </label>
+              <label >
+                <input id="Mountain" name="settingStyle" type="radio"  value="Mountain">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Mountains</span>
+              </label>
+              <label >
+                <input id="River" name="settingStyle" type="radio" value="River">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Rivers</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+          <div class="bigMap">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1aJN-W4_TjVaLxHwqc9Nqe69baeU" width="640" height="480"></iframe>
+          </div>
 
-<!-- Show the first results-->
+<!-- FormOne Results-->
       <div class="output">
         <h3>Your best match is displayed below:</h3>
-          <div class="row">
-            <div class="div-1 col-md-12">
-              <div class="col-md-6">
-                <h3><span id="nameOfCamping"></span></h3>
-                <div><span class="styleIcon"></span><span class="displayStyle"></span></div>
-                <div class="middle"><span class="settingIcon"></span><span class="displaySetting"></span></div>
-                <div><img src="img/cost-icon.png" alt="" /><span id="totalCost"></span></div>
-                <div class="middle"><img src="img/toilet.png"><span class="amenities"></span><img src="img/picnic.png"><span class="anomolies"></span>
-                </div>
+        <div class="row">
+          <div class="div-1 col-md-12">
+            <div class="col-md-6">
+              <h3><span id="nameOfCamping"></span></h3>
+              <div><span class="styleIcon"></span><span class="displayStyle"></span></div>
+              <div class="middle"><span class="settingIcon"></span><span class="displaySetting"></span></div>
+              <div><img src="img/cost-icon.png" alt="" /><span id="totalCost"></span></div>
+              <div class="middle"><img src="img/toilet.png"><span class="amenities"></span><img src="img/picnic.png"><span class="anomolies"></span>
               </div>
-              <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
               <div class="bigPhoto">
                 <div><span class="mainImg"></span><span class="displayMainImg"></span></div>
               </div>
@@ -97,28 +98,26 @@
           </div>
         </div>
       </div>
-
-<!-- Ask for more information-->
+<!-- FormTwo Question 1-3 -->
       <div id="partTwo">
-        <form class="formTwo"><!--2nd form that targets dates and length of stay-->
+        <form class="formTwo">
           <h3>What day would you like to arrive?</h3>
           <input id="date" class="form-control "type="date" name="arrivalDate">
           <h3>How many nights would you like to stay?</h3>
-          <input id="nights" class="form-control" type="number" required="">
+          <input min="0" id="nights" class="form-control" type="number" required="">
           <h3>How many people will be staying?</h3>
-          <input id="people" class="form-control" type="number" required=""><br>
+          <input min="0" id="people" class="form-control" type="number" required=""><br>
           <button id="formTwoButton" type="submit" class="btn btn-primary" name="submit">Submit</button>
-        </form><!--ends 2nd form-->
+        </form>
       </div>
-
-<!-- Show the Second result (total price)-->
+<!-- FormTwo Results-->
       <div id="output2">
         <div class="row">
           <div class="div-1 col-md-12">
             <div class="col-md-6">
               <h4>Your Trip Details</h4>
               <div class="middle"><img src="img/calendar.png"/><span class="calendarDate"></span></div>
-              <div><img src="img/night.png"/><span class="totalNights"></span></div><!--price coording to user form2-->
+              <div><img src="img/night.png"/><span class="totalNights"></span></div>
               <div class="middle"><img src="img/hiking.png"/><span class="totalPeople"></span></div>
               <div><img src="img/cost-icon.png" alt="" /><span class="totalCost"></span></div>
             </div>
@@ -130,8 +129,7 @@
             </div>
           </div>
         </div>
-
-
+<!-- FormThree, Question 1-2 -->
         <form id="form-three" class="formThree">
           <h3>Finalize reservation:</h3>
           <div class="form-group finalInput">
@@ -140,18 +138,19 @@
             <label class="email" for="userEmail">Email address:</label>
             <input type="email" class="form-control" id="userEmail" placeholder="Enter email" required="">
           </div>
-
           <button type="submit" class="btn btn-primary">Confirm</button>
           <button type="reset" value="Reset" class="btn btn-primary reset" onclick="window.location.reload()">Reset Form</button>
         </form>
-
       </div>
+<!-- FormThree Results -->
       <span id="finalOutput"></span>
     </div>
+
     <footer class="footer">
       <img src="img/tent-small.png" alt="campsite finder icon" /><br><br>
       <!-- <p>Posted by: Daniella Trulls, Beth Hansen, Corey Redding and Jordan Loop</p> -->
     </footer>
+
     <div class="intro">
       <img src="img/tent-intro.png" alt="pic of a tent" /><br><br>
       <a class="introLink" href="url">Enter Campsite Finder</a>

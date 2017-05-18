@@ -24,9 +24,10 @@ body{
   font-weight: bold;
   background-color: #e8e1cd;
 }
-.container{
+.container1{
   font-family: 'Dosis', sans-serif;
   padding-bottom: 35px;
+  margin: 2% 10%;
 }
 h1, h2 {
   font-weight: bolder;
@@ -45,12 +46,16 @@ h1, h2 {
 }
 
 /* FORM AREA */
-
+.formOne{
+  float:left;
+}
 .formOne h3{
   font-weight: bolder;
   margin-top: 20px;
 }
-
+.formOne select{
+  width:70%;
+}
 input[type='radio'] {
     -webkit-appearance:none;
     width:20px;
@@ -78,8 +83,13 @@ input[type='radio']:checked:before {
 label:hover{
   color: #c2552a;
 }
-
+.bigMap{
+  float:right;
+  margin-top: 30px;
+}
 .btn-primary {
+  width: 200px;
+  height: 50px;
   margin-top: 20px;
   background-color: #6f7d44;
   border-color: #6f7d44;
@@ -166,6 +176,9 @@ span {
 }
 #partTwo {
   display: none;
+}
+#partTwo input{
+  width:30%;
 }
 .displayStyle, .displaySetting, #totalCost, .totalNights, .totalPeople, .totalCost, .calendarDate, .amenities {
   margin-left: 20px;
