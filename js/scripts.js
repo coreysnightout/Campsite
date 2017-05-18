@@ -179,7 +179,6 @@ $(document).ready(function() {
         $("#finalOutput").append('<div> Thank you, ' +
                         newUser.userName + "!<br>" +
                         ' We have sent a confirmation email to ' +
-
                         newUser.userEmail +
                         '.</div>')
       });  //  formThree.submit
