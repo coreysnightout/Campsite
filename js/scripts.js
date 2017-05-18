@@ -49,10 +49,6 @@ $(document).ready(function() {
     $(".intro").fadeOut('slow');
   });
 
-
-
-
-
   //  -----------------------------------------------------FIRST SUBMIT BUTTON-----------------------------------------------------
   $(".formOne").submit(function(event) {
     event.preventDefault();
