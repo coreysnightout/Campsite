@@ -1,5 +1,8 @@
 # Campsite Finder
 
+![campsite-readme-header](https://user-images.githubusercontent.com/25654531/32678080-c9aab732-c615-11e7-88f7-812d5ae3e4be.png)
+
+
 #### User fills out a series of forms and suggested camping locations are returned., 5/17/2017
 
 #### By Jordan Loop, Corey Redding, Daniella Trulls, Beth Hansen
