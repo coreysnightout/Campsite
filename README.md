@@ -1,5 +1,5 @@
 ## About
-This project is the product of Epicodus' Intro To Programming course 4 day final project. My 3 teammates and I had been coding for 5 weeks and had little to know outside help aside from research. I have not updated the project (aside from About section of README.md) since we completed it as a testament to my level of understanding after programming for 5 weeks. The majority of time time was spent writing the scripts.js file, as well as adding some comments to index.html for readability.
+This project is the product of Epicodus' Intro To Programming course 4 day final project. My 3 teammates and I had been coding for 5 weeks and had little to no outside help aside from ourresearch. I have not updated the project (aside from About section of README.md) since we completed it as a testament to my level of understanding after programming for 5 weeks. The majority of time time was spent writing the scripts.js file, as well as adding some comments to index.html for readability. This was my frist experience working more then 8 hours on a project as a small team.
 
 # Campsite Finder
 
